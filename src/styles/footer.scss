@@ -1,0 +1,22 @@
+@import './palette.scss';
+
+#footer {
+    background-color: $gray;
+    height: 80px;
+
+    div {
+        width: 50%;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        * {
+            margin: auto;
+        }
+        #github {
+            color: #fff;
+            .icon {
+                fill: #fff;
+            }
+        }
+    }
+}

@@ -1,9 +1,10 @@
 const htmlWebpackPlugin = require('html-webpack-plugin')
+const path = require('path')
 
 module.exports = {
     entry: './src/index.js',
     output: {
-        path: __dirname + '/dist',
+        path: path.resolve(__dirname, '../back/src/static'),
         filename: 'bundle.js',
     },
     resolve: {
@@ -11,6 +12,7 @@ module.exports = {
     },
     module: {
         rules: [
+            // jsx syntax
             {
                 test: /\.(js|jsx)$/,
                 use: ['babel-loader'],
@@ -20,6 +22,11 @@ module.exports = {
             {
                 test: /\.s(a|c)ss$/,
                 use: ['style-loader', 'css-loader', 'sass-loader'],
+            },
+            // svg icons
+            {
+                test: /\.svg$/,
+		use: ['@svgr/webpack'],
             },
         ],
     },

@@ -1,0 +1,48 @@
+@import './palette.scss';
+@import './mixins.scss';
+
+.navbar {
+    display: flex;
+    margin: 1em;
+
+    .navs {
+        display: flex;
+    }
+
+    @include large {
+        flex-direction: row;
+        flex-grow: 3;
+        * {
+            font-size: 1em;
+        }
+	.space {
+	    flex-grow: 2;
+	}
+        .navs {
+            flex-direction: row;
+        }
+    }
+
+    @include small {
+        flex-direction: column;
+        * {
+            font-size: 1em;
+        }
+        .navs {
+            flex-direction: column;
+	    text-align: center;
+        }
+    }
+
+    button {
+        margin: 1em;
+        background-color: transparent;
+        border: none;
+        &:hover {
+            color: $lightGray;
+        }
+        &:focus {
+            outline: none;
+        }
+    }
+}

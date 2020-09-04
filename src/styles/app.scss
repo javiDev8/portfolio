@@ -1,0 +1,18 @@
+@import './palette.scss';
+@import url('https://fonts.googleapis.com/css2?family=Mukta&display=swap');
+
+#app {
+    // height: 100%;
+    flex: 1 0 auto;
+}
+
+body {
+    background-image: linear-gradient($almostBlack, $darkGray);
+    * {
+        font-family: 'Mukta', sans-serif;
+        color: #fff;
+    }
+
+    display: flex;
+    flex-direction: column;
+}

@@ -1,19 +1,23 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
-import '../styles/test.scss'
+import Navbar from './navbar.jsx'
+import Footer from './footer.jsx'
 
-export default () => {
-    const [error, setError] = useState(false)
+import Home from './home.jsx'
+import Contact from './contact.jsx'
+import About from './about.jsx'
 
-    return (
-        <div>
-            <h1>Hello React with Sass!</h1>
-            <button
-                className={error ? 'error' : 'normal'}
-                onClick={() => setError(!error)}
-            >
-                <h2>Click me</h2>
-            </button>
-        </div>
-    )
-}
+import '../styles/app.scss'
+
+export default () => (
+    <Router id="mainContainer">
+        <Navbar />
+        <Switch >
+            <Route exact path="/" component={Home} />
+            <Route exact path="/contact" component={Contact} />
+            <Route exact path="/about" component={About} />
+            <Route component={() => <h1>404</h1>} />
+        </Switch>
+    </Router>
+)

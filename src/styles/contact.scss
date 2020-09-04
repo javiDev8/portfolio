@@ -1,0 +1,60 @@
+@import './mixins.scss';
+@import './palette.scss';
+
+.form {
+    display: flex;
+    flex-direction: column;
+
+    maring-bottom: 100px;
+    @include large {
+        width: 500px;
+        margin: auto;
+        margin-top: 50px;
+	margin-bottom: 100px;
+    }
+
+    @include small {
+        width: auto;
+    }
+
+    .header {
+        display: flex;
+        flex-direction: row;
+        flex-grow: 3;
+        h2 {
+            flex-grow: 2;
+            width: auto;
+            text-align: center;
+            margin: 8px;
+            // border-right: 2px solid #fff;
+        }
+        span {
+            width: auto;
+            flex-grow: 1;
+            margin: auto;
+            text-align: center;
+        }
+    }
+
+    * {
+        width: auto;
+        height: auto;
+    }
+    .input {
+        margin: 10px;
+        padding: 10px;
+        background-color: transparent;
+        border: 2px solid $blue;
+        border-radius: 4px;
+        &:focus {
+            outline: none;
+        }
+    }
+
+    button {
+        transition: background-color 0.5s;
+        &:hover {
+            background-color: $blue;
+        }
+    }
+}
