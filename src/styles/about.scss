@@ -1,0 +1,11 @@
+@import './mixins.scss';
+
+#about {
+    margin: auto;
+    p {
+	text-align: justify;
+    }
+    @include large {
+        max-width: 500px;
+    }
+}

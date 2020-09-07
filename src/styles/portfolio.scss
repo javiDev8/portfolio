@@ -1,0 +1,18 @@
+@import './mixins.scss';
+
+#portfolio {
+    .project {
+        display: flex;
+    }
+    @include large {
+        .project {
+            flex-direction: row;
+            margin: auto;
+	    max-width: 600px;
+            img {
+                border-radius: 5px;
+                margin: 20px;
+            }
+        }
+    }
+}

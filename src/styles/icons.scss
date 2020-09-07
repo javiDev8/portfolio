@@ -1,11 +1,19 @@
 @import './palette.scss';
+@import './mixins.scss';
 
 #icons {
-    display: flex;
-    flex-direction: column;
-    .animated {
-	position: absolute;
-        animation: test 4s cubic-bezier(1, 0, 0, 1);
+    // display: flex;
+    // flex-direction: column;
+    @include large {
+        .animated {
+            animation: jump 4s cubic-bezier(1, 0, 0, 1);
+        }
+    }
+    @include small {
+	margin-left: 350px;
+        .animated {
+            animation: slide 4s cubic-bezier(1, 0, 0, 1);
+        }
     }
     #nodeicon {
         transform: scale(0.8) translate(0, 50px);
@@ -20,29 +28,36 @@
         transform: scale(0.85) translate(0, 50px);
     }
     #nginxicon {
-	transform: scale(4) translate(24px, 40px);
+        transform: scale(4) translate(24px, 40px);
     }
 }
 
-@keyframes test {
+@keyframes jump {
     0% {
-        // transform: translateX(600px);
-	// opacity: 0;
         transform: translateY(-600px);
     }
     25% {
-        // transform: translateX(0px);
-	// opacity: 1;
         transform: translateY(0);
     }
     75% {
-        // transform: translateX(0px);
-	// opacity: 1;
         transform: translateY(0);
     }
     100% {
-        // transform: translateX(600px);
-	// opacity: 0;
         transform: translateY(-600px);
+    }
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(-600px);
+    }
+    25% {
+        transform: translateX(0);
+    }
+    75% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-600px);
     }
 }

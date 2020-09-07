@@ -5,6 +5,12 @@
     display: flex;
     @include large {
         flex-direction: row;
+        min-height: 600px;
+    }
+    @include small {
+
+        flex-direction: column;
+        min-height: 1000px;
     }
 
     .back {
@@ -23,9 +29,18 @@
         margin: 80px;
         padding: 50;
         margin-right: none;
-        font-size: 3em;
+
+        .js {
+            color: $yellow;
+        }
+        .fs {
+            color: $red;
+        }
 
         @include large {
+            * {
+                font-size: 50px;
+            }
             width: 460px;
 
             .hello {
@@ -40,12 +55,6 @@
                 span {
                     margin-right: 10px;
                 }
-                .js {
-                    color: $yellow;
-                }
-                .fs {
-                    color: $red;
-                }
             }
 
             .dev {
@@ -54,6 +63,9 @@
         }
 
         @include small {
+            * {
+                font-size: 80px;
+            }
             .dev {
                 display: flex;
                 flex-direction: column;

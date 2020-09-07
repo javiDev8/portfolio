@@ -1,21 +1,64 @@
 @import './palette.scss';
+@import './mixins.scss';
 
 #footer {
     background-color: $gray;
-    height: 80px;
+    display: flex;
+    width: auto;
+    .icon {
+        fill: #fff;
+    }
 
     div {
-        width: 50%;
-        margin: auto;
         display: flex;
-        flex-direction: row;
-        * {
+    }
+
+    @include large {
+        margin-top: 50px;
+        height: 70px;
+        div {
+            width: 70%;
             margin: auto;
+            flex-direction: row;
+            #github {
+                margin: auto;
+                color: #fff;
+            }
+            #email {
+                margin: auto;
+                .icon {
+                    transform: scale(1.3);
+                    height: 20px;
+                    width: 20px;
+                    margin-right: 3px;
+                }
+            }
         }
-        #github {
-            color: #fff;
-            .icon {
-                fill: #fff;
+    }
+
+    @include small {
+        height: 300px;
+        div {
+            height: 100%;
+            flex-direction: column;
+            width: 100%;
+
+            #email {
+                margin: auto;
+                width: auto;
+                .icon {
+                    transform: scale(2);
+                    height: 20px;
+                    width: 20px;
+                    margin-right: 3px;
+                }
+            }
+            #github {
+                margin: auto;
+                width: auto;
+                .icon {
+                    transform: scale(2);
+                }
             }
         }
     }

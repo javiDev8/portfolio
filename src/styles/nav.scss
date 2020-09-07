@@ -5,19 +5,23 @@
     display: flex;
     margin: 1em;
 
-    .navs {
-        display: flex;
+    .current {
+	color: $cyan;
     }
 
     @include large {
         flex-direction: row;
-        flex-grow: 3;
+        // flex-grow: 3;
         * {
             font-size: 1em;
         }
-	.space {
-	    flex-grow: 2;
-	}
+        .space {
+            flex-grow: 1;
+        }
+
+        #mobileBtn {
+            display: none;
+        }
         .navs {
             flex-direction: row;
         }
@@ -28,9 +32,33 @@
         * {
             font-size: 1em;
         }
-        .navs {
+
+        #mobileBtn {
+	    display: flex;
+	    flex-direction: row;
+	    .space {
+		flex-grow: 1;
+	    }
+            button {
+                width: 200px;
+		margin: 20px;
+		.icon {
+		    fill: #fff;
+		    width: 100px;
+		    height: 100px;
+		    // transform: scale(0.5);
+		}
+            }
+        }
+        .bar {
+            display: none;
+        }
+        .ham {
+            display: flex;
             flex-direction: column;
-	    text-align: center;
+            text-align: center;
+
+	    animation: open 0.3s cubic-bezier(1,0,0,1);
         }
     }
 
@@ -39,10 +67,19 @@
         background-color: transparent;
         border: none;
         &:hover {
-            color: $lightGray;
+            color: $blue;
         }
         &:focus {
             outline: none;
         }
+    }
+}
+
+@keyframes open {
+    0% {
+	height: 0px;
+    }
+    100% {
+	height: 592px;
     }
 }
