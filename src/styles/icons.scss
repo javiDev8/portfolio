@@ -2,33 +2,29 @@
 @import './mixins.scss';
 
 #icons {
-    // display: flex;
-    // flex-direction: column;
     @include large {
         .animated {
+	    // position: fixed;
             animation: jump 4s cubic-bezier(1, 0, 0, 1);
         }
     }
     @include small {
-	margin-left: 350px;
+        margin-left: 370px;
         .animated {
             animation: slide 4s cubic-bezier(1, 0, 0, 1);
         }
     }
     #nodeicon {
-        transform: scale(0.8) translate(0, 50px);
+        transform: scale(0.8) translate(0, 115px);
         * {
             fill: $green;
         }
     }
     #reacticon {
-        transform: scale(3.8) translate(25px, 40px);
+        transform: scale(3.8) translate(25px, 55px);
     }
     #webpackicon {
-        transform: scale(0.85) translate(0, 50px);
-    }
-    #nginxicon {
-        transform: scale(4) translate(24px, 40px);
+        transform: scale(0.85) translate(0, 115px);
     }
 }
 

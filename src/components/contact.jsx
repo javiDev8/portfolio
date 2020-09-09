@@ -47,7 +47,7 @@ export default () => {
                 type="text"
                 rows={6}
             />
-            <button className="input" onClick={submit}>
+            <button onClick={submit}>
                 Enviar
             </button>
         </form>

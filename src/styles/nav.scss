@@ -1,5 +1,6 @@
 @import './palette.scss';
 @import './mixins.scss';
+@import './slideKeyframe.scss';
 
 .navbar {
     display: flex;
@@ -58,6 +59,7 @@
             flex-direction: column;
             text-align: center;
 
+	    // @include slide('Y', 0.3s);
 	    animation: open 0.3s cubic-bezier(1,0,0,1);
         }
     }

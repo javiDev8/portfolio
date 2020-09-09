@@ -1,14 +1,16 @@
 @import './palette.scss';
 @import './mixins.scss';
+@import './slideKeyframe.scss';
 
 .home {
     display: flex;
     @include large {
+        @include slide('X', 0.4s);
         flex-direction: row;
         min-height: 600px;
     }
     @include small {
-
+        @include slide('Y', 0.4s);
         flex-direction: column;
         min-height: 1000px;
     }

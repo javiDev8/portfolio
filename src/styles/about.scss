@@ -1,11 +1,16 @@
 @import './mixins.scss';
+@import './slideKeyframe.scss';
 
 #about {
-    margin: auto;
+    @include slide('Y', 0.4s);
     p {
-	text-align: justify;
+        text-align: justify;
     }
     @include large {
+        margin: auto;
         max-width: 500px;
+    }
+    @include small {
+	margin: 50px;
     }
 }

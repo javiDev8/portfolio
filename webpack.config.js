@@ -26,7 +26,15 @@ module.exports = {
             // svg icons
             {
                 test: /\.svg$/,
-		use: ['@svgr/webpack'],
+                use: ['@svgr/webpack'],
+            },
+            // images
+            {
+                test: /\.(png|jpe?g|gif)$/,
+                loader: 'file-loader',
+                options: {
+                    name: '[name].[ext]',
+                },
             },
         ],
     },

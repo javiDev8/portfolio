@@ -24,7 +24,9 @@
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "file-loader": "^6.1.0"
+  },
   "scripts": {
     "dev": "webpack --mode development --watch",
     "prod": "webpack --mode production"

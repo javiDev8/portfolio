@@ -1,17 +1,58 @@
 @import './mixins.scss';
+@import './slideKeyframe.scss';
 
 #portfolio {
     .project {
         display: flex;
+        .description {
+            display: flex;
+            flex-direction: column;
+            .space {
+                flex-grow: 1;
+            }
+            .links {
+                display: flex;
+                flex-direction: column;
+                a {
+                    text-decoration: none;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
     }
+
     @include large {
         .project {
             flex-direction: row;
             margin: auto;
-	    max-width: 600px;
             img {
-                border-radius: 5px;
+                height: 300px;
+                width: auto;
                 margin: 20px;
+                padding: 20px;
+                border-right: 2px solid #fff;
+            }
+            .description {
+                max-width: 600px;
+                padding: 30px;
+                @include slide('X', 0.4s);
+            }
+        }
+    }
+    @include small {
+        .project {
+            flex-direction: column-reverse;
+            img {
+                width: 95%;
+                margin: auto;
+                padding: 20px;
+                height: auto;
+            }
+            .description {
+                padding: 30px;
+                @include slide('Y', 0.4s);
             }
         }
     }

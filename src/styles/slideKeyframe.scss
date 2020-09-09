@@ -1,0 +1,30 @@
+@import './mixins.scss';
+
+@mixin slide($axis, $time) {
+    @if $axis == 'X' {
+        animation: horizontalSlide $time cubic-bezier(1, 0, 0, 1);
+    } @else {
+        animation: verticalSlide $time cubic-bezier(1, 0, 0, 1);
+    }
+}
+
+@keyframes horizontalSlide {
+    0% {
+        transform: translateX(-800px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+@keyframes verticalSlide {
+    0% {
+        transform: translateY(800px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
